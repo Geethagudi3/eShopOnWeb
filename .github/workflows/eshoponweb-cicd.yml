@@ -78,8 +78,8 @@ jobs:
     - name: deploy
       uses: azure/arm-deploy@v1
       with:
-        subscriptionId: ${{ env.SUBSCRIPTION-ID }}
-        resourceGroupName: ${{ env.RESOURCE-GROUP }}
+        subscriptionId: ${{ env.a05b51c5-681d-492b-b084-4554609d50f3 }}
+        resourceGroupName: ${{ env.rg-az400-eshoponweb-geetha }}
         template: bicep-template/webapp.bicep
         parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
         failOnStdErr: false   
@@ -88,6 +88,6 @@ jobs:
     - name: Publish Website to WebApp
       uses: Azure/webapps-deploy@v2
       with:
-        app-name: ${{ env.WEBAPP-NAME  }}
+        app-name: ${{ env.az400-webapp-geetha  }}
         package: .net-app
    
